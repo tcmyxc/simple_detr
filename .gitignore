@@ -19,3 +19,4 @@ not_tracked_dir/
 *.png
 *.jpg
 COCO/
+.idea
