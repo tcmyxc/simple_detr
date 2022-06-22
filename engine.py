@@ -2,15 +2,14 @@
 """
 Train and eval functions used in main.py
 """
-import os
-import sys
-from tqdm import tqdm
 from typing import Iterable
 
 import torch
-import util.misc as utils
 import torch.distributed as dist
+from tqdm import tqdm
+
 from datasets.coco_eval import CocoEvaluator
+
 
 def reduce_tensor(tensor: torch.Tensor):
     rt = tensor.clone()

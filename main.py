@@ -1,10 +1,10 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 import argparse
 import datetime
-import json
-import sys
 import random
+import sys
 import time
+import warnings
 from pathlib import Path
 
 import numpy as np
@@ -16,7 +16,6 @@ from datasets.coco import build as build_coco
 from engine import evaluate, train_one_epoch
 from models.detr import build as build_model
 
-import warnings
 warnings.filterwarnings('ignore')
 
 

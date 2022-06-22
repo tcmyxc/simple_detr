@@ -8,9 +8,7 @@ from torch import nn
 
 from util import box_ops
 from util.misc import (NestedTensor, nested_tensor_from_tensor_list,
-                       accuracy, get_world_size, interpolate,
-                       is_dist_avail_and_initialized)
-
+                       get_world_size, is_dist_avail_and_initialized)
 from .backbone import build_backbone
 from .matcher import build_matcher
 from .transformer import build_transformer
@@ -40,7 +38,7 @@ class DETR(nn.Module):
         self.aux_loss = aux_loss
 
     def forward(self, samples: NestedTensor):
-        """ The forward expects a NestedTensor, which consists of:
+        """The forward expects a NestedTensor, which consists of:
                - samples.tensor: batched images, of shape [batch_size x 3 x H x W]
                - samples.mask: a binary mask of shape [batch_size x H x W], containing 1 on padded pixels
 

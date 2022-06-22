@@ -6,13 +6,14 @@ Mostly copy-paste from https://github.com/pytorch/vision/blob/edfd5a7/references
 The difference is that there is less copy-pasting from pycocotools
 in the end of the file, as python3 can suppress prints with contextlib
 """
-import os
-import contextlib
 import copy
+
 import numpy as np
 import torch
-from pycocotools.cocoeval import COCOeval
 from pycocotools.coco import COCO
+from pycocotools.cocoeval import COCOeval
+
+
 class CocoEvaluator(object):
     def __init__(self, coco_gt, iou_type='bbox'):
         coco_gt = copy.deepcopy(coco_gt)
